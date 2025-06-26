@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "prisma db push && next build",
     "start": "next start",
     "lint": "next lint",
     "db:setup": "node scripts/db-setup.js setup",
@@ -16,6 +16,7 @@
     "db:test": "node scripts/test-auth.js",
     "deploy": "node scripts/deploy.js",
     "deploy:prod": "node scripts/deploy.js --deploy",
+    "deploy:check": "node scripts/deploy-check.js",
     "postinstall": "prisma generate"
   },
   "dependencies": {

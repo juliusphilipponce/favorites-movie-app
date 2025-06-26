@@ -87,5 +87,5 @@ export const authOptions = {
     signIn: '/auth/signin',
     signUp: '/auth/signup',
   },
-  secret: auth.secret,
+  secret: process.env.NEXTAUTH_SECRET || auth.secret,
 }
