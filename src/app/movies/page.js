@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { usePopularMovies, useTrendingMovies, useTopRatedMoviesWithFilter, useUpcomingMovies, useMovieSearch } from '@/lib/hooks/useMovies';
 import MovieSection from '@/components/movies/MovieSection';
 import YearFilter from '@/components/ui/YearFilter';
 import { DetailedFilterIndicator } from '@/components/ui/FilterStatusIndicator';
 
-export default function Movies() {
+function MoviesContent() {
   const searchParams = useSearchParams();
   const category = searchParams.get('category') || 'popular';
   const searchQuery = searchParams.get('search') || '';
@@ -195,5 +195,18 @@ export default function Movies() {
         </>
       )}
     </div>
+  );
+}
+
+export default function Movies() {
+  return (
+    <Suspense fallback={<div className="w-full max-w-none md:max-w-6xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-white mb-4">Movies</h1>
+        <p className="text-gray-400 text-lg leading-relaxed">Loading...</p>
+      </div>
+    </div>}>
+      <MoviesContent />
+    </Suspense>
   );
 }
