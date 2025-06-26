@@ -2,6 +2,7 @@
 
 import { useSession } from 'next-auth/react'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import ProtectedRoute from '@/components/auth/ProtectedRoute'
 import LoadingSpinner from '@/components/ui/LoadingSpinner'
 import { MOVIE_GENRES, getGenreNames, validateGenrePreferences } from '@/lib/constants/genres'
@@ -159,9 +160,11 @@ function ProfileSection({ session }) {
         {/* Profile Image */}
         <div className="flex-shrink-0 self-center sm:self-start">
           {session?.user?.image ? (
-            <img
+            <Image
               src={session.user.image}
               alt={session.user.name || 'User'}
+              width={80}
+              height={80}
               className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-4 border-gray-600"
             />
           ) : (

@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { useSession, signOut } from 'next-auth/react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
 export default function UserDropdown() {
@@ -90,9 +91,11 @@ export default function UserDropdown() {
         aria-label="User menu"
       >
         {session.user?.image ? (
-          <img
+          <Image
             src={session.user.image}
             alt={session.user.name || 'User'}
+            width={32}
+            height={32}
             className="w-8 h-8 rounded-full border-2 border-gray-600 hover:border-blue-500 transition-colors duration-200"
           />
         ) : (
@@ -119,9 +122,11 @@ export default function UserDropdown() {
           <div className="px-4 py-3 border-b border-gray-700 bg-gray-750">
             <div className="flex items-center space-x-3">
               {session.user?.image ? (
-                <img
+                <Image
                   src={session.user.image}
                   alt={session.user.name || 'User'}
+                  width={40}
+                  height={40}
                   className="w-10 h-10 rounded-full"
                 />
               ) : (

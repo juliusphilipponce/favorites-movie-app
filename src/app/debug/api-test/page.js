@@ -144,7 +144,7 @@ export default function ApiTestPage() {
             <li>1. Go to <a href="https://www.themoviedb.org/signup" target="_blank" className="text-blue-400 hover:underline">TMDB Signup</a></li>
             <li>2. Create an account and verify your email</li>
             <li>3. Go to <a href="https://www.themoviedb.org/settings/api" target="_blank" className="text-blue-400 hover:underline">API Settings</a></li>
-            <li>4. Request an API key (choose "Developer" option)</li>
+            <li>4. Request an API key (choose &quot;Developer&quot; option)</li>
             <li>5. Fill out the application form</li>
             <li>6. Copy your API key and update the .env file</li>
           </ol>

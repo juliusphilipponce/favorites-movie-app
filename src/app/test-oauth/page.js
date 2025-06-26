@@ -2,6 +2,8 @@
 
 import { useSession, signIn, signOut, getProviders } from 'next-auth/react'
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function TestOAuth() {
   const { data: session, status } = useSession()
@@ -47,9 +49,11 @@ export default function TestOAuth() {
                   {session.user?.image && (
                     <div className="mt-4">
                       <p><strong>Profile Image:</strong></p>
-                      <img 
-                        src={session.user.image} 
-                        alt="Profile" 
+                      <Image
+                        src={session.user.image}
+                        alt="Profile"
+                        width={64}
+                        height={64}
                         className="w-16 h-16 rounded-full mt-2"
                       />
                     </div>
@@ -138,12 +142,12 @@ export default function TestOAuth() {
 
           <div className="mt-8 pt-6 border-t border-gray-200">
             <div className="flex justify-center space-x-4">
-              <a
+              <Link
                 href="/"
                 className="text-blue-600 hover:text-blue-800 font-medium"
               >
                 ← Back to Home
-              </a>
+              </Link>
               <a
                 href="/auth/signin"
                 className="text-blue-600 hover:text-blue-800 font-medium"

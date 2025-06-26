@@ -106,7 +106,7 @@ export default function YearFilterDebug() {
       )}
 
       <div className="mt-6 text-sm text-gray-400">
-        <p><strong>Primary Release Year:</strong> Uses TMDB's primary_release_year parameter</p>
+        <p><strong>Primary Release Year:</strong> Uses TMDB&#39;s primary_release_year parameter</p>
         <p><strong>Strict Date Range:</strong> Uses release_date.gte and release_date.lte parameters</p>
         <p>Check the browser console for detailed API request logs.</p>
       </div>

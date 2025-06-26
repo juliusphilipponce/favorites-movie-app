@@ -6,14 +6,14 @@ export default function About() {
       <h1 className="text-3xl font-bold text-white mb-8">About MovieApp</h1>
       <p className="text-gray-400 text-lg leading-relaxed">
         Welcome to MovieApp, your one-stop destination for all things movies!
-        Whether you're a casual moviegoer or a dedicated cinephile, we have
+        Whether you&#39;re a casual moviegoer or a dedicated cinephile, we have
         something for everyone.
       </p>
       <p className="text-gray-400 text-lg leading-relaxed mt-6">
         Our mission is to provide you with the most comprehensive movie database
         on the web. We offer detailed information on thousands of films, including
-        ratings, reviews, and cast and crew details. Whether you're looking for
-        the latest blockbusters or classic cinema, we've got you covered.
+        ratings, reviews, and cast and crew details. Whether you&#39;re looking for
+        the latest blockbusters or classic cinema, we&#39;ve got you covered.
       </p>
       <p className="text-gray-400 text-lg leading-relaxed mt-6">
         At MovieApp, we believe that movies have the power to inspire, entertain,
