@@ -6,7 +6,17 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:setup": "node scripts/db-setup.js setup",
+    "db:migrate": "node scripts/db-setup.js migrate",
+    "db:reset": "node scripts/db-setup.js reset",
+    "db:studio": "npx prisma studio",
+    "db:export": "node scripts/export-data.js export",
+    "db:import": "node scripts/export-data.js import",
+    "db:test": "node scripts/test-auth.js",
+    "deploy": "node scripts/deploy.js",
+    "deploy:prod": "node scripts/deploy.js --deploy",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

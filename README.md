@@ -30,7 +30,7 @@ A modern, responsive movie discovery and favorites tracking application built wi
 ### Backend & Database
 - **NextAuth.js** - Authentication library
 - **Prisma ORM** - Database toolkit and query builder
-- **PostgreSQL** - Production database (SQLite for development)
+- **Supabase PostgreSQL** - Production database (SQLite for development)
 - **bcryptjs** - Password hashing
 
 ### APIs & Services
@@ -48,7 +48,7 @@ Before running this project, ensure you have:
 - **Node.js** (v18.0.0 or higher)
 - **npm** or **yarn** package manager
 - **TMDB API Key** - [Get one here](https://www.themoviedb.org/settings/api)
-- **Database** - PostgreSQL for production or SQLite for development
+- **Database** - Supabase PostgreSQL for production or SQLite for development
 - **OAuth Providers** (optional) - Google and/or GitHub OAuth apps
 
 ## 🚀 Installation & Setup
@@ -99,17 +99,27 @@ GITHUB_SECRET="your-github-client-secret"
 
 ### 4. Database Setup
 
-Generate Prisma client and run migrations:
-
+#### Development (SQLite)
 ```bash
-# Generate Prisma client
-npx prisma generate
-
-# Run database migrations
-npx prisma db push
+# Generate Prisma client and set up development database
+npm run db:setup
 
 # (Optional) View database in Prisma Studio
-npx prisma studio
+npm run db:studio
+```
+
+#### Production (Supabase)
+```bash
+# Create .env.production with your Supabase credentials
+cp .env.production.example .env.production
+
+# Edit .env.production with your actual values
+# Then set up production database
+export NODE_ENV=production
+npm run db:setup
+
+# Test the connection
+npm run db:test
 ```
 
 ### 5. Run Development Server
